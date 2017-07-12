@@ -1,11 +1,9 @@
 package nassert;
 
 import com.google.common.collect.Maps;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.MalformedJsonException;
 import nassert.exception.JsonAssertException;
 
 import java.io.StringReader;
@@ -18,9 +16,13 @@ import java.util.Map;
 public class JsonAssert {
     public static void compareJson(String strJson1, String strJson2) {
         JsonParser parser = new JsonParser();
-        JsonElement json1 = parser.parse(new StringReader(strJson1));
-        JsonElement json2 = parser.parse(new StringReader(strJson2));
-        compareJson(json1, json2);
+        try {
+            JsonElement json1 = parser.parse(new StringReader(strJson1));
+            JsonElement json2 = parser.parse(new StringReader(strJson2));
+            compareJson(json1, json2);
+        }catch (JsonSyntaxException e){
+            throw new JsonAssertException("Incorrect Json format.");
+        }
     }
 
     public static void compareJson(JsonElement json1, JsonElement json2) {
