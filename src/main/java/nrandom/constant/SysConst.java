@@ -1,4 +1,4 @@
-package nutils.constant;
+package nrandom.constant;
 
 /**
  * Created by nguyenho on 1/4/2016.

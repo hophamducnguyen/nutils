@@ -1,4 +1,4 @@
-# nutils
+# nrandom
 Generate random string, number, ...
 
 ## Usage
