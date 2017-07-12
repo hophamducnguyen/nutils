@@ -1,5 +1,6 @@
-# nrandom
-Generate random string, number, ...
+# NUtils
+nrandom: Generate random string, number, ...
+nassert: common assertion
 
 ## Usage
 - Install JDK 8 [http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html]
